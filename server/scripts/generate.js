@@ -36,7 +36,7 @@ async function recoverKey(msgHash, signature, recovery) {
     console.log('signature:', signature)
     const isSigned = secp.verify(signature, messageHash, publicKey);
     const pubKeyRecovered = await recoverKey(messageHash, signature, recovery);
-    console.log(publicKey === pubKeyRecovered)
+    console.log(toHex(publicKey) === toHex(pubKeyRecovered))
     console.log('isSigned', isSigned)
 })();
 
