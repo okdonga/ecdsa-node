@@ -12,6 +12,7 @@ label {
   font-size: .8em;
   font-weight: 400;
   color: #222;
+  position: relative;
 }
 
 .app {
@@ -49,8 +50,12 @@ input {
   font-size: 0.875rem;
 }
 
+button {
+  border: 1px solid white
+}
+
 .button {
-  background-color: #319795;
+  background-color: #4cd0ce;
   border-radius: 0.125rem;
   padding: 10px 20px;
   color: white;
@@ -61,8 +66,20 @@ input {
   font-size: .9em;
   &:hover {
     cursor: pointer;
+    background-color: #aaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    transform: scale(0.95);
   }
 }
+
+.button-wrapper {
+  position: absolute;
+  right: 8px;
+  top: 22px;
+}
+
 
 .wallet {
   display: flex;
@@ -83,4 +100,49 @@ input {
 .transfer {
   display: flex;
   flex-direction: column;
+}
+
+.debug {
+  background-color: #86b8ea9e;
+}
+
+.ToastContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.SlideInToast {
+  display: flex;
+  padding: 12px 24px;
+  background-color: #aaa;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+  .message {
+      margin-right: 0.5rem;
+  }
+  .closeButton {
+      position: absolute;
+      top: 4px;
+      right: 2px;
+      color: #fff;
+      background: none;
+      border: none;
+  }
+
+  .closeButton:hover {
+      cursor: pointer;
+      color: #ddd;
+  }
+}
+
+.SlideInToast.visible {
+  opacity: 1;
+  transform: translateX(0%);
 }
