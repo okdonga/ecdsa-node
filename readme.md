@@ -1,5 +1,13 @@
 ## ECDSA Node (Ethereum Bootcamp Week1 Project)
 
+### Project Description 
+In this project, I built an ECDSA node using my knowledge of how Public Key Cryptography works, Hash functions, and Consensus mechanism.
+
+The project consists of a simple React front-end that communicates with a single server. Users can generate a new wallet, consisting of their own public-private key pair, which is securely stored only on their local machine. When a user signs a transaction, a new digital signature is generated and sent to the server. Only the user with the appropriate private key can create a signature that allows them to move funds from one account to another.
+
+The server verifies that the digital signature it receives is validly signed by the owner (sender) who owns the private key corresponding to the address that is sending the funds. Once this validation passes, the balance is updated.
+
+
 ### APP UI 
 ![App UI](client/public/appUI.png)
 
@@ -23,6 +31,7 @@
   - Recover public key 
   - Sign & verify transactions 
 
+---
 ### Instructions 
 
 This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
